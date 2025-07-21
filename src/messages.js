@@ -8,6 +8,6 @@
  * @author Dev Gui
  */
 module.exports = {
-  welcomeMessage: "Seja bem vindo ao nosso grupo, @member!",
-  exitMessage: "Poxa, @member saiu do grupo... Sentiremos sua falta!",
+  welcomeMessage: "Seja bem vindo(a), @member! Leia as regras e aproveite o grupo",
+  exitMessage: "Bye Bye @member!",
 };

@@ -18,6 +18,8 @@ const { errorLog, infoLog } = require("../utils/logger");
 const { badMacHandler } = require("../utils/badMacHandler");
 const { checkIfMemberIsMuted } = require("../utils/database");
 const { messageHandler } = require("./messageHandler");
+const fs = require("fs");
+const path = require("path");
 
 exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
   if (!messages.length) {
@@ -40,6 +42,58 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
 
       if (webMessage?.message) {
         messageHandler(socket, webMessage);
+      }
+
+      // 🔊 Lógica para detectar palavras e responder com áudios
+      try {
+        const msg = webMessage;
+
+        const text =
+          msg.message?.conversation ||
+          msg.message?.extendedTextMessage?.text ||
+          msg.message?.imageMessage?.caption ||
+          "";
+
+        const lowered = text.toLowerCase();
+
+        const triggers = [
+          {
+            keyword: "vagabunda",
+            file: "vagabunda.mp3",
+          },
+          {
+            keyword: "vc fala demais",
+            file: "vcfalademais.mp3",
+          },
+          { 
+            keyword: "ei prostituta",
+            file: "eiprostituta.mp3",
+          },
+        ];
+
+        for (const { keyword, file } of triggers) {
+          if (lowered.includes(keyword)) {
+            const audioPath = path.resolve(__dirname, `../audios/${file}`);
+
+            if (fs.existsSync(audioPath)) {
+              await socket.sendMessage(
+                msg.key.remoteJid,
+                {
+                  audio: { url: audioPath },
+                  mimetype: "audio/mpeg",
+                  ptt: true,
+                },
+                { quoted: msg }
+              );
+            } else {
+              console.error(`Arquivo de áudio não encontrado: ${audioPath}`);
+            }
+
+            break; // só envia um áudio por mensagem
+          }
+        }
+      } catch (e) {
+        errorLog(`Erro ao tentar responder com áudio: ${e.message}`);
       }
 
       if (isAtLeastMinutesInPast(timestamp)) {
@@ -97,7 +151,6 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
       }
 
       errorLog(`Erro ao processar mensagem: ${error.message}`);
-
       continue;
     }
   }
