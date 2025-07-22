@@ -18,5 +18,9 @@
     {
          "match": "Bender",
          "answer": "Saudades"
+    },
+    {
+         "match": "Figurinhas",
+         "answer": "!figurinhas 10"
     }
 ]
