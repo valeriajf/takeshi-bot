@@ -44,7 +44,7 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
         messageHandler(socket, webMessage);
       }
 
-      // 🔊 Lógica para detectar palavras e responder com áudios
+      // VaL🔊 Lógica para detectar palavras e responder com áudios
       try {
         const msg = webMessage;
 
@@ -62,72 +62,12 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
             file: "vagabunda.mp3",
           },
           {
-            keyword: "fala demais",
+            keyword: "vc fala demais",
             file: "vcfalademais.mp3",
           },
           { 
-            keyword: "prostituta",
+            keyword: "ei prostituta",
             file: "eiprostituta.mp3",
-          },
-          {
-            keyword: "trump",
-            file: "trump.mp3",
-          },
-          {
-             keyword: "pior",
-             file: "piorqueeu.mp3",
-          },
-          {
-             keyword: "bom dia",
-             file: "bomdiamundobita.mp3",
-          },
-          {
-             keyword: "foda",
-             file: "eusoumuitofoda.mp3",
-          },
-          {
-             keyword: "movimentação",
-             file: "movimentação.mp3",
-          },
-          { 
-             keyword: "pics",
-             file: "pix.mp3",
-          },
-          {
-             keyword: "obrigado",
-             file: "obrigadoamigo.mp3",
-          },
-          {
-             keyword: "parabéns",
-             file: "parabens.mp3",
-          },
-          {
-              keyword: "louça",
-              file: "louça.mp3",
-          },
-          {
-              keyword: "errou",
-              file: "errou.mp3",
-          },
-          {
-              keyword: "flamengo",
-              file: "flamengo.mp3",
-          },
-          {
-              keyword: "plantão",
-              file: "plantao.mp3",
-          },
-          {
-              keyword: "xuxa",
-              file: "xoudaxuxa.mp3",
-          },
-          {
-              keyword: "deadbot",
-              file: "deadbot.mp3",
-          },
-          {
-              keyword: "corno",
-              file: "corno.mp3",
           },
         ];
 

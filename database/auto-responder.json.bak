@@ -4,6 +4,10 @@
         "answer": "Olá"
     },
     {
+        "match": "Bom dia",
+        "answer": "Bom é vc o dia é só um detalhe"
+    },
+    {
         "match": "Boa noite",
         "answer": "Boa é vc"
     },
@@ -20,7 +24,7 @@
          "answer": "Saudades"
     },
     {
-         "match": "Figurinhas",
-         "answer": "!figurinhas 10"
+         "match": "Devil já dizia",
+         "answer": "É muito vagabunda mesmo viu, misericórdia"
     }
 ]

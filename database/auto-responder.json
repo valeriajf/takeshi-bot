@@ -4,6 +4,10 @@
         "answer": "Olá"
     },
     {
+        "match": "Bom dia",
+        "answer": "Bom é vc o dia é só um detalhe"
+    },
+    {
         "match": "Boa noite",
         "answer": "Boa é vc"
     },
@@ -18,5 +22,5 @@
     {
          "match": "Bender",
          "answer": "Saudades"
-    }
+    },
 ]
