@@ -70,10 +70,6 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
             file: "eiprostituta.mp3",
           },
           {
-             keyword: "opa",
-             file: "movimentação.mp3",
-          },
-          {
               keyword: "corno",
               file: "corno.mp3",
           },
@@ -94,28 +90,12 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
               file: "louça.mp3",
           },
           {
-              keyword: "parabéns",
-              file: "parabens.mp3"
-          },
-          {
               keyword: "pics",
               file: "pix.mp3",
           },
           {
-              keyword: "atenção",
-              file: "plantao.mp3",
-          },
-          {
               keyword: "xuxa",
               file: "xoudaxuxa.mp3",
-          },
-          {
-              keyword: "doutor",
-              file: "doutorHans.mp3",
-          },
-          {
-              keyword: "boa noite",
-              file: "oi.mp3",
           },
           {
               keyword: "oremos",
@@ -124,14 +104,6 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
           {
               keyword: "atalias",
               file: "nerd.mp3",
-          },
-          {
-              keyword: "dead",
-              file: "byebyebye.mp3",
-          },
-          {
-              keyword: "ze",
-              file: "zegotinha.mp3",
           },
           {
               keyword: "forte",
