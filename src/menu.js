@@ -58,6 +58,7 @@ exports.menuMessage = () => {
 ▢ • ${PREFIX}unmute
 ▢ • ${PREFIX}welcome (1/0)
 ▢ • ${PREFIX}parabens
+▢ • ${PREFIX}fumar
 ▢
 ╰━━─「⭐」─━━
 

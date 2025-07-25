@@ -1,30 +1,18 @@
 [
     {
-        "match": "Oi",
-        "answer": "Olá"
-    },
-    {
         "match": "Bom dia",
-        "answer": "Bom é vc o dia é só um detalhe"
-    },
-    {
-        "match": "Boa noite",
-        "answer": "Boa é vc"
+        "answer": "Bom é vc, o dia é só um detalhe"
     },
     {
         "match": "Boa tarde",
         "answer": "Boa"
     },
     {
-         "match": "Vdd a Luane",
-         "answer": "Aquela Puta"
+        "match": "Vdd, a Luane",
+        "answer": "Aquela Puta"
     },
     {
-         "match": "Bender",
-         "answer": "Saudades"
-    },
-    {
-         "match": "Devil já dizia",
-         "answer": "É muito vagabunda mesmo viu, misericórdia"
+         "match": "Oi",
+         "answer": "Turubom?"
     }
 ]

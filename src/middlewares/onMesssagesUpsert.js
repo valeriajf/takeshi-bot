@@ -44,7 +44,7 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
         messageHandler(socket, webMessage);
       }
 
-      // VaL🔊 Lógica para detectar palavras e responder com áudios
+      // VaL 🔊 Lógica para detectar palavras e responder com áudios
       try {
         const msg = webMessage;
 
@@ -62,13 +62,81 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
             file: "vagabunda.mp3",
           },
           {
-            keyword: "vc fala demais",
+            keyword: "tá bom",
             file: "vcfalademais.mp3",
           },
           { 
-            keyword: "ei prostituta",
+            keyword: "prostituta",
             file: "eiprostituta.mp3",
           },
+          {
+             keyword: "opa",
+             file: "movimentação.mp3",
+          },
+          {
+              keyword: "corno",
+              file: "corno.mp3",
+          },
+          {
+              keyword: "errou",
+              file: "errou.mp3",
+          },
+          {
+              keyword: "foda",
+              file: "eusoumuitofoda.mp3",
+          },
+          {
+              keyword: "flamengo",
+              file: "flamengo.mp3",
+          },
+          {
+              keyword: "louça",
+              file: "louça.mp3",
+          },
+          {
+              keyword: "parabéns",
+              file: "parabens.mp3"
+          },
+          {
+              keyword: "pics",
+              file: "pix.mp3",
+          },
+          {
+              keyword: "atenção",
+              file: "plantao.mp3",
+          },
+          {
+              keyword: "xuxa",
+              file: "xoudaxuxa.mp3",
+          },
+          {
+              keyword: "doutor",
+              file: "doutorHans.mp3",
+          },
+          {
+              keyword: "boa noite",
+              file: "oi.mp3",
+          },
+          {
+              keyword: "oremos",
+              file: "ferrolhos.mp3",
+          },
+          {
+              keyword: "atalias",
+              file: "nerd.mp3",
+          },
+          {
+              keyword: "dead",
+              file: "byebyebye.mp3",
+          },
+          {
+              keyword: "ze",
+              file: "zegotinha.mp3",
+          },
+          {
+              keyword: "forte",
+              file: "forte.mp3"
+          }, 
         ];
 
         for (const { keyword, file } of triggers) {
