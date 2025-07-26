@@ -68,7 +68,7 @@ exports.onGroupParticipantsUpdate = async ({
           }
 
           const url = welcome(
-            "participante",
+             "participante",
             "Você é o mais novo membro do grupo!",
             link
           );

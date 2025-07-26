@@ -21,10 +21,11 @@ const { messageHandler } = require("./messageHandler");
 const fs = require("fs");
 const path = require("path");
 
+// ✅ IMPORTAÇÃO DO REGISTRADOR DE ATIVIDADE
+const { registrarMensagem } = require("../utils/atividade");
+
 exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
-  if (!messages.length) {
-    return;
-  }
+  if (!messages.length) return;
 
   for (const webMessage of messages) {
     if (DEVELOPER_MODE) {
@@ -42,12 +43,26 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
 
       if (webMessage?.message) {
         messageHandler(socket, webMessage);
+
+        // ✅ REGISTRANDO MENSAGEM PARA RANKING POR GRUPO
+        try {
+          const groupId = webMessage.key.remoteJid;
+          const userId = webMessage.key.participant || groupId;
+          const nome =
+            webMessage.pushName || webMessage.sender?.pushName || "Desconhecido";
+          const isGroup = groupId.endsWith("@g.us");
+
+          if (!webMessage.key.fromMe && isGroup) {
+            registrarMensagem(groupId, userId, nome);
+          }
+        } catch (e) {
+          errorLog(`Erro ao registrar mensagem para ranking: ${e.message}`);
+        }
       }
 
-      // VaL🔊 Lógica para detectar palavras e responder com áudios
+      // 🎵 Áudios automáticos por palavras-chave
       try {
         const msg = webMessage;
-
         const text =
           msg.message?.conversation ||
           msg.message?.extendedTextMessage?.text ||
@@ -57,18 +72,20 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
         const lowered = text.toLowerCase();
 
         const triggers = [
-          {
-            keyword: "vagabunda",
-            file: "vagabunda.mp3",
-          },
-          {
-            keyword: "vc fala demais",
-            file: "vcfalademais.mp3",
-          },
-          { 
-            keyword: "ei prostituta",
-            file: "eiprostituta.mp3",
-          },
+          { keyword: "vagabunda", file: "vagabunda.mp3" },
+          { keyword: "tá bom", file: "vcfalademais.mp3" },
+          { keyword: "prostituta", file: "eiprostituta.mp3" },
+          { keyword: "corno", file: "corno.mp3" },
+          { keyword: "errou", file: "errou.mp3" },
+          { keyword: "foda", file: "eusoumuitofoda.mp3" },
+          { keyword: "flamengo", file: "flamengo.mp3" },
+          { keyword: "louça", file: "louça.mp3" },
+          { keyword: "pics", file: "pix.mp3" },
+          { keyword: "show", file: "xoudaxuxa.mp3" },
+          { keyword: "oremos", file: "ferrolhos.mp3" },
+          { keyword: "atalias", file: "nerd.mp3" },
+          { keyword: "bye", file: "byebyebye.mp3" },
+          { keyword: "forte", file: "forte.mp3" },
         ];
 
         for (const { keyword, file } of triggers) {
@@ -89,7 +106,7 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
               console.error(`Arquivo de áudio não encontrado: ${audioPath}`);
             }
 
-            break; // só envia um áudio por mensagem
+            break;
           }
         }
       } catch (e) {
@@ -117,9 +134,7 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
       } else {
         const commonFunctions = loadCommonFunctions({ socket, webMessage });
 
-        if (!commonFunctions) {
-          continue;
-        }
+        if (!commonFunctions) continue;
 
         if (
           checkIfMemberIsMuted(
