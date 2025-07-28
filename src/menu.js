@@ -46,10 +46,10 @@ exports.menuMessage = () => {
 ▢ • ${PREFIX}anti-video (1/0)
 ▢ • ${PREFIX}auto-responder (1/0)
 ▢ • ${PREFIX}ban
-▢ • ${PREFIX}beck
 ▢ • ${PREFIX}delete
 ▢ • ${PREFIX}exit (1/0)
 ▢ • ${PREFIX}fechar
+▢ • ${PREFIX}fumar
 ▢ • ${PREFIX}hidetag
 ▢ • ${PREFIX}limpar
 ▢ • ${PREFIX}link-grupo
