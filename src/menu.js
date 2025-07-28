@@ -33,6 +33,8 @@ exports.menuMessage = () => {
 ╭━━⪩ ADMINS ⪨━━
 ▢
 ▢ • ${PREFIX}abrir
+▢ • ${PREFIX}adv
+▢ • ${PREFIX}adv-reset
 ▢ • ${PREFIX}agendar-mensagem
 ▢ • ${PREFIX}anti-audio (1/0)
 ▢ • ${PREFIX}anti-document (1/0)
@@ -44,6 +46,7 @@ exports.menuMessage = () => {
 ▢ • ${PREFIX}anti-video (1/0)
 ▢ • ${PREFIX}auto-responder (1/0)
 ▢ • ${PREFIX}ban
+▢ • ${PREFIX}beck
 ▢ • ${PREFIX}delete
 ▢ • ${PREFIX}exit (1/0)
 ▢ • ${PREFIX}fechar
@@ -52,14 +55,13 @@ exports.menuMessage = () => {
 ▢ • ${PREFIX}link-grupo
 ▢ • ${PREFIX}mute
 ▢ • ${PREFIX}only-admin (1/0)
+▢ • ${PREFIX}parabens
 ▢ • ${PREFIX}promover
+▢ • ${PREFIX}rankativo 
 ▢ • ${PREFIX}rebaixar
 ▢ • ${PREFIX}revelar
 ▢ • ${PREFIX}unmute
 ▢ • ${PREFIX}welcome (1/0)
-▢ • ${PREFIX}parabens
-▢ • ${PREFIX}beck
-▢ • ${PREFIX}rankativo 
 ▢
 ╰━━─「⭐」─━━
 
