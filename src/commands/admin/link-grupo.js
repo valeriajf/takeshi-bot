@@ -1,7 +1,7 @@
 /**
  * Comando para obter o link do grupo
  *
- * @author Valéria
+ * @author VaL
  */
 const { errorLog } = require(`${BASE_DIR}/utils/logger`);
 const { PREFIX } = require(`${BASE_DIR}/config`);
