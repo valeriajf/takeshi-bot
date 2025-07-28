@@ -1,4 +1,4 @@
-//Designed by 𝓗𝓮𝓷𝓻𝓲𝓺𝓾𝓮 𝓳𝓸𝓼𝓮 </>
+// @author: 𝓗𝓮𝓷𝓻𝓲𝓺𝓾𝓮 𝓳𝓸𝓼𝓮 </>
 
 const { PREFIX } = require(`${BASE_DIR}/config`);
 const { editOwnMessage } = require(`${BASE_DIR}/utils/messageUtils`);
