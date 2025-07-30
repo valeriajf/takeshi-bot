@@ -1,3 +1,5 @@
+// @author: VaL
+
 const { PREFIX } = require(`${BASE_DIR}/config`);
 const { getRanking } = require(`${BASE_DIR}/utils/atividade`);
 

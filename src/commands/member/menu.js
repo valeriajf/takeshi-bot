@@ -1,3 +1,5 @@
+// @author: VaL
+
 const path = require("path");
 const fs = require("fs");
 const { PREFIX, ASSETS_DIR } = require(`${BASE_DIR}/config`);

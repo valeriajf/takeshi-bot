@@ -1,3 +1,5 @@
+// @author: VaL
+
 const { PREFIX } = require(`${BASE_DIR}/config`);
 const { InvalidParameterError } = require(`${BASE_DIR}/errors`);
 
