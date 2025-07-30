@@ -1,7 +1,7 @@
 const path = require("path");
 
 // Prefixo dos comandos.
-exports.PREFIX = "/";
+exports.PREFIX = "#";
 
 // Emoji do bot (mude se preferir).
 exports.BOT_EMOJI = "";
@@ -17,7 +17,7 @@ exports.BOT_NUMBER = "5511933372131";
 // Número do dono bot.
 // Apenas números, exatamente como está no WhatsApp.
 // Se o seu número não exibir o nono dígito (9) no WhatsApp, não coloque-o.
-exports.OWNER_NUMBER = "5532991945133";
+exports.OWNER_NUMBER = "5511933372131";
 
 // LID do dono do bot.
 // Para obter o LID do dono do bot, use o comando <prefixo>get-lid @marca ou +telefone do dono.

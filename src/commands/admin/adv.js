@@ -1,5 +1,3 @@
-// @author: VaL 
-
 const fs = require('fs');
 const warnsFile = './warns.json';
 

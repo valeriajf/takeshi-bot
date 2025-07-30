@@ -76,16 +76,13 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
           { keyword: "tá bom", file: "vcfalademais.mp3" },
           { keyword: "prostituta", file: "eiprostituta.mp3" },
           { keyword: "corno", file: "corno.mp3" },
-          { keyword: "errou", file: "errou.mp3" },
-          { keyword: "foda", file: "eusoumuitofoda.mp3" },
           { keyword: "flamengo", file: "flamengo.mp3" },
           { keyword: "louça", file: "louça.mp3" },
           { keyword: "pics", file: "pix.mp3" },
           { keyword: "show", file: "xoudaxuxa.mp3" },
           { keyword: "oremos", file: "ferrolhos.mp3" },
-          { keyword: "atalias", file: "nerd.mp3" },
-          { keyword: "bye", file: "byebyebye.mp3" },
-          { keyword: "forte", file: "forte.mp3" },
+          { keyword: "carolis", file:
+            "carolis.mp3" },
         ];
 
         for (const { keyword, file } of triggers) {
