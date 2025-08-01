@@ -27,6 +27,7 @@ module.exports = {
       "Tudo passa, nem que seja por cima de você!",
       "Você falhou hoje? Não se preocupe, amanhã você vai falhar mais!",
       "Sorria! O pior ainda está por vir.",
+      "Nunca foi azar, sempre foi incompetência!",
     ];
 
     const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];

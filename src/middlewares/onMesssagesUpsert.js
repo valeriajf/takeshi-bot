@@ -83,6 +83,8 @@ exports.onMessagesUpsert = async ({ socket, messages, startProcess }) => {
           { keyword: "oremos", file: "ferrolhos.mp3" },
           { keyword: "carolis", file:
             "carolis.mp3" },
+          { keyword: "isma", file:
+            "isma.mp3" },
         ];
 
         for (const { keyword, file } of triggers) {
