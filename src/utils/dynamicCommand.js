@@ -31,6 +31,57 @@ import {
 } from "./database.js";
 import { findCommandImport } from "./index.js";
 import { errorLog } from "./logger.js";
+import { obterAluguelDoGrupo } from "./aluguel.js";
+
+/**
+ * Monta e envia a mensagem de status do aluguel para o grupo
+ */
+async function enviarStatusAluguelDesativado({ remoteJid, socket, sendReply }) {
+  try {
+    const aluguel = obterAluguelDoGrupo(remoteJid);
+
+    // Busca nome do grupo
+    let nomeGrupo = "Grupo";
+    try {
+      const meta = await socket.groupMetadata(remoteJid);
+      nomeGrupo = meta?.subject || "Grupo";
+    } catch (_) {}
+
+    const sep = "━━━━━━━━━━━━━━━━━━";
+
+    if (!aluguel) {
+      // Grupo sem aluguel cadastrado
+      await sendReply(
+        `⚠️  *ALUGUEL STATUS*\n\n` +
+        `${sep}\n🔴 *SEM ALUGUEL*\n${sep}\n\n` +
+        `🪀 *${nomeGrupo}*\n` +
+        `🆔 *ID grupo:* ${remoteJid}\n` +
+        `💢 *Status:* 🔴 DESATIVADO\n` +
+        `${sep}\n\n` +
+        `💡 *Entre em contato com o dono do BoT*`
+      );
+      return;
+    }
+
+    // Grupo com aluguel expirado
+    await sendReply(
+      `⚠️  *ALUGUEL STATUS*\n\n` +
+      `${sep}\n🔴 *EXPIRADO*\n${sep}\n\n` +
+      `🪀 *${nomeGrupo}*\n` +
+      `🆔 *ID grupo:* ${remoteJid}\n` +
+      `🔑 *ID aluguel:* \`\`\`${aluguel.id}\`\`\`\n` +
+      `⏱️ *Contratado:* ${aluguel.duracao}\n` +
+      `📅 *Vencimento:* ${aluguel.expira}\n` +
+      `💢 *Status:* 🔴 EXPIRADO\n` +
+      `${sep}\n\n` +
+      `💡 *Entre em contato com o dono do BoT*`
+    );
+  } catch (_) {
+    await sendReply(
+      "⚠️ Este grupo está desativado! Entre em contato com o dono do bot para renovar o aluguel."
+    );
+  }
+}
 
 /**
  * @param {CommandHandleProps} paramsHandler
@@ -140,9 +191,8 @@ export async function dynamicCommand(paramsHandler, startProcess) {
       hasTypeAndCommand({ type, command })
     ) {
       if (command.name !== "on") {
-        await sendWarningReply(
-          "Este grupo está desativado! Peça para o dono do grupo ativar o bot!"
-        );
+        // ⭐ Mostra status do aluguel do grupo específico
+        await enviarStatusAluguelDesativado({ remoteJid, socket, sendReply });
         return;
       }
 

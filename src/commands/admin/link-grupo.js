@@ -1,38 +1,68 @@
-/**
- * Comando para obter o link do grupo
- *
- * @author Valéria
- */
-import { PREFIX } from "../../config.js";
-import { DangerError } from "../../errors/index.js";
-import { errorLog } from "../../utils/logger.js";
+import { PREFIX, BOT_NAME } from "../../config.js";
 
 export default {
   name: "link-grupo",
-  description: "Obtém o link do grupo",
+  description: "Obtém o link do grupo.",
   commands: ["link-grupo", "link-gp"],
   usage: `${PREFIX}link-grupo`,
+
   /**
    * @param {CommandHandleProps} props
    */
   handle: async ({
     socket,
-    sendReact,
-    sendReply,
-    sendErrorReply,
     remoteJid,
+    sendReply,
+    sendSuccessReact,
+    sendErrorReply,
   }) => {
     try {
+      await sendSuccessReact();
+
       const groupCode = await socket.groupInviteCode(remoteJid);
+
       if (!groupCode) {
-        throw new DangerError("Preciso ser admin!");
+        return await sendErrorReply(
+          "Preciso ser administrador para gerar o link do grupo."
+        );
       }
+
+      const metadata = await socket.groupMetadata(remoteJid);
+
       const groupInviteLink = `https://chat.whatsapp.com/${groupCode}`;
-      await sendReact("🪀");
-      await sendReply(groupInviteLink);
+
+      const messageText = `
+╭━━━〔 🔗 *LINK DO GRUPO* 〕━━━⬣
+┃
+┃ 🪀 *Grupo:* ${metadata.subject}
+┃
+┃ 🔓 *Acesso liberado*
+┃ 👇 Entre pelo link abaixo:
+┃
+┃ 🌐 ${groupInviteLink}
+┃
+╰━━━〔 🤖 ${BOT_NAME} 〕━━━⬣
+      `.trim();
+
+      try {
+        const profilePicUrl = await socket.profilePictureUrl(
+          remoteJid,
+          "image"
+        );
+
+        await socket.sendMessage(remoteJid, {
+          image: { url: profilePicUrl },
+          caption: messageText,
+        });
+      } catch {
+        await sendReply(messageText);
+      }
     } catch (error) {
-      errorLog(error);
-      await sendErrorReply("Preciso ser admin!");
+      console.error("[link-grupo]", error);
+
+      await sendErrorReply(
+        "Preciso ser administrador para gerar o link do grupo."
+      );
     }
   },
 };

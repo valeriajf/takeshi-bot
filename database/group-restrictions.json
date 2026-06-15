@@ -1,1 +1,19 @@
-{}
+{
+  "120363426929015404@g.us": {
+    "anti-lottieSticker": true,
+    "anti-payment": true,
+    "anti-image": true,
+    "anti-status-grupo": true,
+    "anti-video": true,
+    "anti-document": true,
+    "anti-product": true
+  },
+  "120363425718868067@g.us": {
+    "anti-image": true
+  },
+  "120363286893812049@g.us": {
+    "anti-image": true,
+    "anti-video": true,
+    "anti-payment": true
+  }
+}

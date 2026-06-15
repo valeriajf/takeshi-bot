@@ -1,0 +1,738 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-06-10T13:47:01.236Z",
+    "date": "10/06/2026, 10:47:01",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "{\"lid\":\"257440960491717@lid\",\"pn\":\"553491740148@s.whatsapp.net\"}",
+      "name": "{\"lid\":\"257440960491717\",\"pn\":\"553491740148\"}"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 10:47:00"
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-06-10T13:54:47.362Z",
+    "date": "10/06/2026, 10:54:47",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "{\"lid\":\"19761849196589@lid\",\"pn\":\"5511962528406@s.whatsapp.net\"}",
+      "name": "{\"lid\":\"19761849196589\",\"pn\":\"5511962528406\"}"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 10:54:47"
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-06-10T13:56:36.457Z",
+    "date": "10/06/2026, 10:56:36",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "{\"lid\":\"143598741909580@lid\",\"pn\":\"5511930054770@s.whatsapp.net\"}",
+      "name": "{\"lid\":\"143598741909580\",\"pn\":\"5511930054770\"}"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 10:56:36"
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-06-11T00:23:16.098Z",
+    "date": "10/06/2026, 21:23:16",
+    "action": "Alterar Configurações",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Enviar mensagens: Apenas admins"
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-06-11T00:23:21.775Z",
+    "date": "10/06/2026, 21:23:21",
+    "action": "Alterar Configurações",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Enviar mensagens: Todos os membros"
+  },
+  {
+    "id": 6,
+    "timestamp": "2026-06-11T00:23:55.298Z",
+    "date": "10/06/2026, 21:23:55",
+    "action": "Alterar Nome do Grupo",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS ☠️"
+    },
+    "target": null,
+    "details": "Novo nome: SQU∆D ☠️ STICKERS ☠️"
+  },
+  {
+    "id": 7,
+    "timestamp": "2026-06-11T00:24:08.882Z",
+    "date": "10/06/2026, 21:24:08",
+    "action": "Alterar Nome do Grupo",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Novo nome: SQU∆D ☠️ STICKERS"
+  },
+  {
+    "id": 8,
+    "timestamp": "2026-06-11T00:24:10.856Z",
+    "date": "10/06/2026, 21:24:10",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "{\"lid\":\"174401878278331@lid\",\"pn\":\"5519989099782@s.whatsapp.net\"}",
+      "name": "{\"lid\""
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 21:24:10"
+  },
+  {
+    "id": 9,
+    "timestamp": "2026-06-11T00:24:29.744Z",
+    "date": "10/06/2026, 21:24:29",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5519989099782",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-06-11T00:27:25.600Z",
+    "date": "10/06/2026, 21:27:25",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "{\"lid\":\"49207926874275@lid\",\"pn\":\"5511950251452@s.whatsapp.net\"}",
+      "name": "{\"lid\""
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 21:27:25"
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-06-11T00:30:14.506Z",
+    "date": "10/06/2026, 21:30:14",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5511950251452",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 12,
+    "timestamp": "2026-06-11T01:32:49.315Z",
+    "date": "10/06/2026, 22:32:49",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "5522925487978@s.whatsapp.net@s.whatsapp.net",
+      "name": "5522925487978@s.whatsapp.net"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 22:32:48"
+  },
+  {
+    "id": 13,
+    "timestamp": "2026-06-11T01:33:48.752Z",
+    "date": "10/06/2026, 22:33:48",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5522925487978",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 14,
+    "timestamp": "2026-06-11T02:30:28.971Z",
+    "date": "10/06/2026, 23:30:28",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "5522925487978@s.whatsapp.net@s.whatsapp.net",
+      "name": "5522925487978"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 23:30:28"
+  },
+  {
+    "id": 15,
+    "timestamp": "2026-06-11T02:31:04.218Z",
+    "date": "10/06/2026, 23:31:04",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5522925487978",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 16,
+    "timestamp": "2026-06-11T02:33:08.463Z",
+    "date": "10/06/2026, 23:33:08",
+    "action": "Remover Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5522925487978",
+    "details": "Membro removido"
+  },
+  {
+    "id": 17,
+    "timestamp": "2026-06-11T02:33:08.474Z",
+    "date": "10/06/2026, 23:33:08",
+    "action": "Remover Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "{\"id\"",
+    "details": "Membro removido do grupo"
+  },
+  {
+    "id": 18,
+    "timestamp": "2026-06-11T02:48:51.870Z",
+    "date": "10/06/2026, 23:48:51",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 23:48:51"
+  },
+  {
+    "id": 19,
+    "timestamp": "2026-06-11T03:00:10.099Z",
+    "date": "11/06/2026, 00:00:10",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 00:00:09"
+  },
+  {
+    "id": 20,
+    "timestamp": "2026-06-11T03:07:43.108Z",
+    "date": "11/06/2026, 00:07:43",
+    "action": "Alterar Configurações",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Enviar mensagens: Apenas admins"
+  },
+  {
+    "id": 21,
+    "timestamp": "2026-06-11T06:57:13.883Z",
+    "date": "11/06/2026, 03:57:13",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 03:57:13"
+  },
+  {
+    "id": 22,
+    "timestamp": "2026-06-11T06:57:25.694Z",
+    "date": "11/06/2026, 03:57:25",
+    "action": "Solicitação de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitação às 03:57:25"
+  },
+  {
+    "id": 23,
+    "timestamp": "2026-06-11T07:08:34.032Z",
+    "date": "11/06/2026, 04:08:34",
+    "action": "Recusar Entrada",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "553287145898",
+    "details": "Solicitação recusada"
+  },
+  {
+    "id": 24,
+    "timestamp": "2026-06-11T09:05:14.905Z",
+    "date": "11/06/2026, 06:05:14",
+    "action": "Alterar Configurações",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922@lid"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Enviar mensagens: Todos os membros"
+  },
+  {
+    "id": 25,
+    "timestamp": "2026-06-11T10:13:02.561Z",
+    "date": "11/06/2026, 07:13:02",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:13:01"
+  },
+  {
+    "id": 26,
+    "timestamp": "2026-06-11T10:14:59.503Z",
+    "date": "11/06/2026, 07:14:59",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:14:58"
+  },
+  {
+    "id": 27,
+    "timestamp": "2026-06-11T10:22:23.679Z",
+    "date": "11/06/2026, 07:22:23",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898@s.whatsapp.net"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:22:22"
+  },
+  {
+    "id": 28,
+    "timestamp": "2026-06-11T10:26:17.701Z",
+    "date": "11/06/2026, 07:26:17",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:26:16"
+  },
+  {
+    "id": 29,
+    "timestamp": "2026-06-11T10:34:13.673Z",
+    "date": "11/06/2026, 07:34:13",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:34:12"
+  },
+  {
+    "id": 30,
+    "timestamp": "2026-06-11T10:38:46.681Z",
+    "date": "11/06/2026, 07:38:46",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:38:45"
+  },
+  {
+    "id": 31,
+    "timestamp": "2026-06-11T10:40:45.733Z",
+    "date": "11/06/2026, 07:40:45",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:40:44"
+  },
+  {
+    "id": 32,
+    "timestamp": "2026-06-11T10:43:10.116Z",
+    "date": "11/06/2026, 07:43:10",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "553287145898@s.whatsapp.net",
+      "name": "553287145898"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 07:43:09"
+  },
+  {
+    "id": 33,
+    "timestamp": "2026-06-11T10:43:48.479Z",
+    "date": "11/06/2026, 07:43:48",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "553287145898",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 34,
+    "timestamp": "2026-06-11T12:04:00.161Z",
+    "date": "11/06/2026, 09:04:00",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "557382279594@s.whatsapp.net",
+      "name": "557382279594"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 09:03:59"
+  },
+  {
+    "id": 35,
+    "timestamp": "2026-06-11T12:09:23.376Z",
+    "date": "11/06/2026, 09:09:23",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "163351011319890@lid",
+      "name": "163351011319890"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "557382279594",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 36,
+    "timestamp": "2026-06-11T13:06:39.357Z",
+    "date": "11/06/2026, 10:06:39",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "558498061128@s.whatsapp.net",
+      "name": "558498061128"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:06:38"
+  },
+  {
+    "id": 37,
+    "timestamp": "2026-06-11T13:06:53.064Z",
+    "date": "11/06/2026, 10:06:53",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "5582920027511@s.whatsapp.net",
+      "name": "5582920027511"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:06:52"
+  },
+  {
+    "id": 38,
+    "timestamp": "2026-06-11T13:24:37.332Z",
+    "date": "11/06/2026, 10:24:37",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "5524981013040@s.whatsapp.net",
+      "name": "5524981013040"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:24:36"
+  },
+  {
+    "id": 39,
+    "timestamp": "2026-06-11T13:24:45.475Z",
+    "date": "11/06/2026, 10:24:45",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "5524999999445@s.whatsapp.net",
+      "name": "5524999999445"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:24:44"
+  },
+  {
+    "id": 40,
+    "timestamp": "2026-06-11T13:24:52.643Z",
+    "date": "11/06/2026, 10:24:52",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "5524999992780@s.whatsapp.net",
+      "name": "5524999992780"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:24:51"
+  },
+  {
+    "id": 41,
+    "timestamp": "2026-06-11T13:25:02.666Z",
+    "date": "11/06/2026, 10:25:02",
+    "action": "Solicitacao de Entrada",
+    "admin": {
+      "id": "5524999993669@s.whatsapp.net",
+      "name": "5524999993669"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": null,
+    "details": "Solicitacao as 10:25:01"
+  },
+  {
+    "id": 42,
+    "timestamp": "2026-06-11T13:25:28.750Z",
+    "date": "11/06/2026, 10:25:28",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5582920027511",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 43,
+    "timestamp": "2026-06-11T13:25:36.000Z",
+    "date": "11/06/2026, 10:25:36",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5524981013040",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 44,
+    "timestamp": "2026-06-11T13:25:41.905Z",
+    "date": "11/06/2026, 10:25:41",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5524999999445",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 45,
+    "timestamp": "2026-06-11T13:25:48.763Z",
+    "date": "11/06/2026, 10:25:48",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5524999992780",
+    "details": "Membro adicionado"
+  },
+  {
+    "id": 46,
+    "timestamp": "2026-06-11T13:25:54.791Z",
+    "date": "11/06/2026, 10:25:54",
+    "action": "Adicionar Membro",
+    "admin": {
+      "id": "125542581964922@lid",
+      "name": "125542581964922"
+    },
+    "group": {
+      "id": "120363426929015404@g.us",
+      "name": "SQU∆D ☠️ STICKERS"
+    },
+    "target": "5524999993669",
+    "details": "Membro adicionado"
+  }
+]

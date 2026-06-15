@@ -1,89 +1,143 @@
-import { ASSETS_DIR, PREFIX } from "../../config.js";
+/**
+ * Comando Perfil - Mostra informações e atributos aleatórios de um usuário
+ *
+ * @author Dev VaL
+ */
+import { PREFIX, ASSETS_DIR } from "../../config.js";
 import { InvalidParameterError } from "../../errors/index.js";
-import { getProfileImageData } from "../../services/baileys.js";
-import { isGroup, onlyNumbers } from "../../utils/index.js";
-import { errorLog } from "../../utils/logger.js";
+import activityTracker from "../../utils/activityTracker.js";
 
 export default {
   name: "perfil",
   description: "Mostra informações de um usuário",
   commands: ["perfil", "profile"],
   usage: `${PREFIX}perfil ou perfil @usuario`,
-  /**
-   * @param {CommandHandleProps} props
-   */
+
   handle: async ({
     args,
     socket,
     remoteJid,
     userLid,
-    sendErrorReply,
+    isGroup,
     sendWaitReply,
     sendSuccessReact,
+    getGroupParticipants,
   }) => {
-    if (!isGroup(remoteJid)) {
-      throw new InvalidParameterError(
-        "Este comando só pode ser usado em grupo."
-      );
+    if (!isGroup) {
+      throw new InvalidParameterError("Este comando só pode ser usado em grupo.");
     }
 
-    const targetLid = args[0] ? `${onlyNumbers(args[0])}@lid` : userLid;
+    // ── DEFINIR USUÁRIO ALVO ──────────────────────────────────────────────────
+
+    let targetLid = userLid;
+
+    if (args[0]) {
+      const num = args[0].replace(/\D/g, "");
+      const participants = await getGroupParticipants();
+      const found = participants.find(
+        (p) => p.id?.includes(num) || p.phoneNumber?.includes(num)
+      );
+      targetLid = found?.id || `${num}@s.whatsapp.net`;
+    }
 
     await sendWaitReply("Carregando perfil...");
 
+    // ── FOTO ──────────────────────────────────────────────────────────────────
+
+    let profilePicUrl = `${ASSETS_DIR}/images/default-user.png`;
+
     try {
-      let profilePicUrl;
-      let userRole = "Membro";
+      profilePicUrl = await socket.profilePictureUrl(targetLid, "image");
+    } catch {
+      // mantém imagem padrão
+    }
 
-      try {
-        const { profileImage } = await getProfileImageData(socket, targetLid);
-        profilePicUrl = profileImage || `${ASSETS_DIR}/images/default-user.png`;
-      } catch (error) {
-        errorLog(
-          `Erro ao tentar pegar dados do usuário ${targetLid}: ${JSON.stringify(
-            error,
-            null,
-            2
-          )}`
-        );
-        profilePicUrl = `${ASSETS_DIR}/images/default-user.png`;
-      }
+    // ── CARGO ─────────────────────────────────────────────────────────────────
 
-      const groupMetadata = await socket.groupMetadata(remoteJid);
+    const groupMetadata = await socket.groupMetadata(remoteJid);
+    const participant = groupMetadata.participants.find((p) => p.id === targetLid);
+    const userRole = participant?.admin ? "Administrador" : "Membro";
 
-      const participant = groupMetadata.participants.find(
-        (participant) => participant.id === targetLid
-      );
+    // ── ACTIVITY TRACKER ──────────────────────────────────────────────────────
 
-      if (participant?.admin) {
-        userRole = "Administrador";
-      }
+    const groupStats = activityTracker.getGroupStats(remoteJid);
+    const userData = groupStats[targetLid];
 
-      const randomPercent = Math.floor(Math.random() * 100);
-      const programPrice = (Math.random() * 5000 + 1000).toFixed(2);
-      const beautyLevel = Math.floor(Math.random() * 100) + 1;
+    const messages = userData?.messages || 0;
+    const stickers = userData?.stickers || 0;
+    const commands = userData?.commands || 0;
+    const audios   = userData?.audios   || 0;
 
-      const mensagem = `
+    // ── RANKING (considera os 4 tipos) ────────────────────────────────────────
+
+    const participantsList = await getGroupParticipants();
+    const activeMembers = [];
+
+    for (const [userId, data] of Object.entries(groupStats)) {
+      if (!participantsList.some((p) => p.id === userId)) continue;
+      const total =
+        (data.messages || 0) +
+        (data.stickers || 0) +
+        (data.commands || 0) +
+        (data.audios   || 0);
+      activeMembers.push({ userId, total });
+    }
+
+    activeMembers.sort((a, b) => b.total - a.total);
+    const index = activeMembers.findIndex((u) => u.userId === targetLid);
+    const rankPosition = index !== -1 ? `${index + 1}º` : "—";
+
+    // ── ATRIBUTOS ALEATÓRIOS ──────────────────────────────────────────────────
+
+    const rnd = () => Math.floor(Math.random() * 100) + 1;
+    const programPrice  = (Math.random() * 5000 + 1000).toFixed(2);
+    const beautyLevel   = rnd();
+    const gadoLevel     = rnd();
+    const passivaLevel  = rnd();
+    const charisma      = rnd();
+    const humor         = rnd();
+    const intelligence  = rnd();
+    const courage       = rnd();
+    const luck          = rnd();
+    const romanticLevel = rnd();
+    const loyalty       = rnd();
+    const flirtSkill    = rnd();
+    const laziness      = rnd();
+    const creativity    = rnd();
+
+    // ── MENSAGEM FINAL ────────────────────────────────────────────────────────
+
+    const mensagem = `
 👤 *Nome:* @${targetLid.split("@")[0]}
 🎖️ *Cargo:* ${userRole}
 
+📝 ${messages} mensagens
+🎭 ${stickers} figurinhas
+🎮 ${commands} comandos
+🎤 ${audios} áudios
+🏆 Rank Ativo: ${rankPosition}
+
 🌚 *Programa:* R$ ${programPrice}
-🐮 *Gado:* ${randomPercent + 7 || 5}%
-🎱 *Passiva:* ${randomPercent + 5 || 10}%
-✨ *Beleza:* ${beautyLevel}%`;
+🐮 *Gado:* ${gadoLevel}%
+🎱 *Passiva:* ${passivaLevel}%
+✨ *Beleza:* ${beautyLevel}%
+🎭 *Carisma:* ${charisma}%
+😂 *Humor:* ${humor}%
+🧠 *Inteligência:* ${intelligence}%
+💪 *Coragem:* ${courage}%
+🍀 *Sorte:* ${luck}%
+💕 *Romântico:* ${romanticLevel}%
+🦁 *Lealdade:* ${loyalty}%
+😏 *Pegador:* ${flirtSkill}%
+😴 *Preguiça:* ${laziness}%
+🎨 *Criatividade:* ${creativity}%`;
 
-      const mentions = [targetLid];
+    await sendSuccessReact();
 
-      await sendSuccessReact();
-
-      await socket.sendMessage(remoteJid, {
-        image: { url: profilePicUrl },
-        caption: mensagem,
-        mentions: mentions,
-      });
-    } catch (error) {
-      console.error(error);
-      sendErrorReply("Ocorreu um erro ao tentar verificar o perfil.");
-    }
+    await socket.sendMessage(remoteJid, {
+      image: { url: profilePicUrl },
+      caption: mensagem,
+      mentions: [targetLid],
+    });
   },
 };

@@ -13,7 +13,7 @@ export function menuMessage(groupJid) {
 
   const prefix = getPrefix(groupJid);
 
-  return `╭━━⪩ BEM VINDO! ⪨━━${readMore()}
+  return `╭━━⪩ DEADBOT ON ⪨━━${readMore()}
 ▢
 ▢ • ${BOT_NAME}
 ▢ • Data: ${date.toLocaleDateString("pt-br")}
@@ -25,13 +25,9 @@ export function menuMessage(groupJid) {
 
 ╭━━⪩ DONO ⪨━━
 ▢
-▢ • ${prefix}exec
-▢ • ${prefix}get-group-id
 ▢ • ${prefix}off
 ▢ • ${prefix}on
 ▢ • ${prefix}set-menu-image
-▢ • ${prefix}set-prefix
-▢ • ${prefix}set-spider-api-token
 ▢
 ╰━━─「🌌」─━━
 
@@ -39,6 +35,9 @@ export function menuMessage(groupJid) {
 ▢
 ▢ • ${prefix}abrir
 ▢ • ${prefix}add-auto-responder
+▢ • ${prefix}adv
+▢ • ${prefix}adv-reset
+▢ • ${prefix}agendamento-reset
 ▢ • ${prefix}agendar-mensagem
 ▢ • ${prefix}anti-audio (1/0)
 ▢ • ${prefix}anti-document (1/0)
@@ -51,50 +50,83 @@ export function menuMessage(groupJid) {
 ▢ • ${prefix}anti-sticker (1/0)
 ▢ • ${prefix}anti-status-grupo (1/0)
 ▢ • ${prefix}anti-video (1/0)
+▢ • ${prefix}apresentacao (on/off)
 ▢ • ${prefix}auto-responder (1/0)
 ▢ • ${prefix}auto-sticker (1/0)
 ▢ • ${prefix}ban
+▢ • ${prefix}banghost
+▢ • ${prefix}boasvindas-add
+▢ • ${prefix}citar
 ▢ • ${prefix}delete
 ▢ • ${prefix}delete-auto-responder
 ▢ • ${prefix}exit (1/0)
+▢ • ${prefix}exit2 (1/0)
 ▢ • ${prefix}fechar
+▢ • ${prefix}get-group-id
+▢ • ${prefix}grupo-abrir (horario)
+▢ • ${prefix}grupo-fechar (horario)
 ▢ • ${prefix}hidetag
+▢ • ${prefix}liberar 
 ▢ • ${prefix}limpar-chat
 ▢ • ${prefix}link-grupo
 ▢ • ${prefix}list-auto-responder
+▢ • ${prefix}lista-negra
+▢ • ${prefix}lista-negra-remover
+▢ • ${prefix}mensagem-diaria (1/0)
 ▢ • ${prefix}mute
 ▢ • ${prefix}only-admin (1/0)
 ▢ • ${prefix}promover
 ▢ • ${prefix}rebaixar
+▢ • ${prefix}regras
 ▢ • ${prefix}revelar
+▢ • ${prefix}roleta-russa
 ▢ • ${prefix}saldo
+▢ • ${prefix}set-gif-grupo-abrir
+▢ • ${prefix}set-gif-grupo-fechar
+▢ • ${prefix}set-prefix
 ▢ • ${prefix}set-proxy
 ▢ • ${prefix}unmute
+▢ • ${prefix}x9 (1/0)
 ▢ • ${prefix}welcome (1/0)
 ▢
 ╰━━─「⭐」─━━
 
 ╭━━⪩ PRINCIPAL ⪨━━
 ▢
+▢ • ${prefix}adms
+▢ • ${prefix}aluguel-status 
 ▢ • ${prefix}attp
+▢ • ${prefix}beck
 ▢ • ${prefix}brat
+▢ • ${prefix}brat2
 ▢ • ${prefix}bratvid
+▢ • ${prefix}bv
 ▢ • ${prefix}cep
+▢ • ${prefix}chance
+▢ • ${prefix}criar-rank
 ▢ • ${prefix}exemplos-de-mensagens
 ▢ • ${prefix}fake-chat
+▢ • ${prefix}ficha
 ▢ • ${prefix}gerar-link
 ▢ • ${prefix}info
+▢ • ${prefix}key-id
 ▢ • ${prefix}meu-lid
+▢ • ${prefix}motivar
+▢ • ${prefix}parabens
 ▢ • ${prefix}perfil
 ▢ • ${prefix}ping
+▢ • ${prefix}rank-ativo
+▢ • ${prefix}rank-inativo
 ▢ • ${prefix}raw-message
 ▢ • ${prefix}rename
 ▢ • ${prefix}removebg
+▢ • ${prefix}sorteio
 ▢ • ${prefix}sticker
 ▢ • ${prefix}suporte
 ▢ • ${prefix}to-gif
 ▢ • ${prefix}to-image
 ▢ • ${prefix}to-mp3
+▢ • ${prefix}top 
 ▢ • ${prefix}ttp
 ▢ • ${prefix}yt-search
 ▢
@@ -109,8 +141,10 @@ export function menuMessage(groupJid) {
 ▢ • ${prefix}pinterest
 ▢ • ${prefix}tik-tok
 ▢ • ${prefix}tik-tok-audio
+▢ • ${prefix}twitter
 ▢ • ${prefix}yt-mp3
 ▢ • ${prefix}yt-mp4
+▢ • ${prefix}yt-music
 ▢
 ╰━━─「🎶」─━━
 
@@ -119,10 +153,17 @@ export function menuMessage(groupJid) {
 ▢ • ${prefix}abracar
 ▢ • ${prefix}beijar
 ▢ • ${prefix}dado
+▢ • ${prefix}dancar
+▢ • ${prefix}driblar
+▢ • ${prefix}duelar
+▢ • ${prefix}hackear
 ▢ • ${prefix}jantar
 ▢ • ${prefix}lutar
 ▢ • ${prefix}matar
+▢ • ${prefix}morder
+▢ • ${prefix}palmas
 ▢ • ${prefix}socar
+▢ • ${prefix}tapa
 ▢
 ╰━━─「🎡」─━━
 
@@ -148,5 +189,7 @@ export function menuMessage(groupJid) {
 ▢ • ${prefix}pixel
 ▢ • ${prefix}rip
 ▢
-╰━━─「❇」─━━`;
-}
+╰━━─「❇」─━━
+
+💚 by ${BOT_NAME}`;
+ }

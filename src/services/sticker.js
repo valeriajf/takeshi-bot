@@ -63,7 +63,6 @@ export async function processStaticSticker(inputPath, metadata) {
     exec(cmd, async (error, _, stderr) => {
       try {
         if (error) {
-          console.error("FFmpeg error:", stderr);
           reject(new Error("Erro ao processar figurinha estática."));
           return;
         }
@@ -114,7 +113,6 @@ export async function processAnimatedSticker(inputPath, metadata) {
 
     return finalPath;
   } catch (err) {
-    console.log("Erro node-webpmux:", err);
     throw new Error("Erro ao processar sticker animado sem FFmpeg.");
   }
 }
@@ -128,7 +126,6 @@ export async function processAnimatedGifToSticker(inputPath, metadata) {
     exec(cmd, async (error, _, stderr) => {
       try {
         if (error) {
-          console.error("FFmpeg error:", stderr);
           reject(new Error("Erro ao processar figurinha animada."));
           return;
         }
@@ -160,11 +157,27 @@ export async function createSticker(paramsHandler) {
     webMessage,
     sendStickerFromFile,
     userLid,
+    isGroup,
+    getGroupName,
   } = paramsHandler;
 
+  // Busca nome do grupo se disponível
+  let groupName = "";
+  if (isGroup && typeof getGroupName === "function") {
+    try {
+      groupName = (await getGroupName()) || "";
+    } catch (_) {
+      groupName = "";
+    }
+  }
+
+  const username = getUserName(webMessage, userLid);
+
   const metadata = {
-    username: getUserName(webMessage, userLid),
-    botName: `${BOT_EMOJI} ${BOT_NAME}`,
+    username: isGroup && groupName
+      ? `⚙️ Criada por: ${username}\n🪀 Grupo: ${groupName}\n💚 By`
+      : `⚙️ Criada por: ${username}\n💚 By`,
+    botName: BOT_NAME,
   };
 
   const outputTempPath = path.resolve(TEMP_DIR, getRandomName("webp"));
@@ -177,11 +190,6 @@ export async function createSticker(paramsHandler) {
           inputPath = await downloadImage(webMessage, getRandomName());
           break;
         } catch (downloadError) {
-          console.error(
-            `Tentativa ${attempt} de download de imagem falhou:`,
-            downloadError.message,
-          );
-
           if (attempt === 3) {
             throw new Error(
               `Falha ao baixar imagem após 3 tentativas: ${downloadError.message}`,
@@ -197,7 +205,6 @@ export async function createSticker(paramsHandler) {
 
         exec(cmd, (error, _, stderr) => {
           if (error) {
-            console.error("FFmpeg error:", stderr);
             reject(error);
           } else {
             resolve();
@@ -210,11 +217,6 @@ export async function createSticker(paramsHandler) {
           inputPath = await downloadVideo(webMessage, getRandomName());
           break;
         } catch (downloadError) {
-          console.error(
-            `Tentativa ${attempt} de download de vídeo falhou:`,
-            downloadError.message,
-          );
-
           if (attempt === 3) {
             throw new Error(
               `Falha ao baixar vídeo após 3 tentativas. Problema de conexão com WhatsApp.`,
@@ -245,7 +247,6 @@ export async function createSticker(paramsHandler) {
 
         exec(cmd, (error, _, stderr) => {
           if (error) {
-            console.error("FFmpeg error:", stderr);
             reject(error);
           } else {
             resolve();
@@ -273,11 +274,6 @@ export async function createSticker(paramsHandler) {
         await sendStickerFromFile(stickerPath, true);
         break;
       } catch (stickerError) {
-        console.error(
-          `Tentativa ${attempt} de envio de sticker falhou:`,
-          stickerError.message,
-        );
-
         if (attempt === 3) {
           throw new Error(
             `Falha ao enviar figurinha após 3 tentativas: ${stickerError.message}`,
@@ -326,9 +322,23 @@ export async function createSticker(paramsHandler) {
 }
 
 export async function processAutoSticker(paramsHandler) {
-  const { isImage, isVideo, sendSuccessReact } = paramsHandler;
+  const {
+    isImage,
+    isVideo,
+    sendSuccessReact,
+    fullMessage,
+  } = paramsHandler;
 
   if (!isImage && !isVideo) {
+    return false;
+  }
+
+  // Se existe texto junto da mídia, não transforma em figurinha
+  if (
+    fullMessage &&
+    fullMessage !== "#auto-command" &&
+    fullMessage.trim() !== ""
+  ) {
     return false;
   }
 
@@ -338,7 +348,6 @@ export async function processAutoSticker(paramsHandler) {
 
     return true;
   } catch (error) {
-    console.error("Erro no processamento automático de sticker:", error);
     return false;
   }
 }

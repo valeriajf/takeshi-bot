@@ -1,79 +1,145 @@
-import { BOT_LID, OWNER_LID, PREFIX } from "../../config.js";
-import { DangerError, InvalidParameterError } from "../../errors/index.js";
+import fs from "node:fs";
+import path from "node:path";
+
+import { ASSETS_DIR, BOT_LID, OWNER_LID, PREFIX } from "../../config.js";
+import { InvalidParameterError, WarningError } from "../../errors/index.js";
 import { onlyNumbers } from "../../utils/index.js";
-import { errorLog } from "../../utils/logger.js";
 
 export default {
   name: "ban",
-  description: "Removo um membro do grupo",
-  commands: ["ban", "kick"],
-  usage: `${PREFIX}ban @marcar_membro 
+  description: "Remove um membro do grupo.",
+  commands: ["ban", "kick", "expulsar"],
+  usage: `${PREFIX}ban @usuario`,
 
-ou 
-
-${PREFIX}ban (mencionando uma mensagem)`,
   /**
    * @param {CommandHandleProps} props
    */
   handle: async ({
-    args,
-    isReply,
     socket,
     remoteJid,
-    replyLid,
-    sendReply,
     userLid,
+    replyLid,
+    args,
+    isReply,
+    isGroup,
     sendSuccessReact,
     sendErrorReply,
   }) => {
-    try {
-      if (!args.length && !isReply) {
-        throw new InvalidParameterError(
-          "Você precisa mencionar ou marcar um membro!"
-        );
-      }
-
-      if (args.length && !args[0].includes("@")) {
-        throw new InvalidParameterError(
-          'Você precisa mencionar um membro com "@"!'
-        );
-      }
-
-      const userId = args[0] ? `${onlyNumbers(args[0])}@lid` : null;
-
-      const memberToRemoveLid = isReply ? replyLid : userId;
-
-      if (!memberToRemoveLid) {
-        throw new InvalidParameterError("Membro inválido!");
-      }
-
-      if (memberToRemoveLid === userLid) {
-        throw new DangerError("Você não pode remover você mesmo!");
-      }
-
-      const resolvedOwnerLid = OWNER_LID;
-
-      if (resolvedOwnerLid && memberToRemoveLid === resolvedOwnerLid) {
-        throw new DangerError("Você não pode remover o dono do bot!");
-      }
-
-      if (BOT_LID && memberToRemoveLid === BOT_LID) {
-        throw new DangerError("Você não pode me remover!");
-      }
-
-      await socket.groupParticipantsUpdate(
-        remoteJid,
-        [memberToRemoveLid],
-        "remove"
-      );
-
-      await sendSuccessReact();
-      await sendReply("Membro removido com sucesso!");
-    } catch (error) {
-      errorLog(JSON.stringify(error, null, 2));
-      await sendErrorReply(
-        `Ocorreu um erro ao remover o membro: ${error.message}`
+    if (!isGroup) {
+      throw new WarningError(
+        "Este comando só pode ser usado dentro de grupos."
       );
     }
+
+    const targetLid = isReply
+      ? replyLid
+      : args[0]
+      ? `${onlyNumbers(args[0])}@lid`
+      : null;
+
+    if (!targetLid) {
+      throw new InvalidParameterError(
+        "Marque ou responda a mensagem do usuário que deseja remover."
+      );
+    }
+
+    const metadata = await socket.groupMetadata(remoteJid);
+
+    const senderParticipant = metadata.participants.find(
+      (p) => (p.lid || p.id) === userLid
+    );
+
+    if (!senderParticipant?.admin && userLid !== OWNER_LID) {
+      throw new WarningError(
+        "Apenas administradores podem usar este comando."
+      );
+    }
+
+    const targetParticipant = metadata.participants.find(
+      (p) => (p.lid || p.id) === targetLid
+    );
+
+    if (!targetParticipant) {
+      throw new WarningError("Usuário não encontrado no grupo.");
+    }
+
+    if (targetLid === OWNER_LID) {
+      throw new WarningError(
+        "Você não pode remover a dona do bot."
+      );
+    }
+
+    if (targetLid === BOT_LID) {
+      throw new WarningError(
+        "Você não pode remover o DeadBoT."
+      );
+    }
+
+    if (targetParticipant.admin && userLid !== OWNER_LID) {
+      throw new WarningError(
+        "Você não pode remover outro administrador."
+      );
+    }
+
+    const frasesBan = [
+      "💥 Foi de base!",
+      "🗡️ Corte rápido e preciso!",
+      "🚪 Já tá do lado de fora.",
+      "🧨 BOOM! Removido.",
+      "🔫 Missão cumprida.",
+      "🩸 Era figurante mesmo.",
+      "🛑 Ban aplicado.",
+      "📦 Despachado pra fora.",
+      "🧤 Estalou e sumiu.",
+      "🎬 Cena deletada.",
+      "☠️ Erro fatal.",
+      "🃏 Você perdeu.",
+      "🌪️ Varrido.",
+      "⚰️ R.I.P.",
+      "🎯 Headshot.",
+    ];
+
+    const frase =
+      frasesBan[Math.floor(Math.random() * frasesBan.length)];
+      
+      global.removedByAdmin ??= new Set();
+
+global.removedByAdmin.add(targetLid);
+
+setTimeout(() => {
+  global.removedByAdmin.delete(targetLid);
+}, 15000);
+
+    await socket.groupParticipantsUpdate(
+      remoteJid,
+      [targetLid],
+      "remove"
+    );
+
+    await socket.sendMessage(remoteJid, {
+      text:
+        `☠️ *BANIMENTO*\n\n` +
+        `👤 *Banido:* @${onlyNumbers(targetLid)}\n` +
+        `👮 *ADM:* @${onlyNumbers(userLid)}\n\n` +
+        `${frase}\n\n` +
+        `👋 *Adeus*`,
+      mentions: [targetLid, userLid],
+    });
+
+    const audioPath = path.resolve(
+      ASSETS_DIR,
+      "audios",
+      "banido.ogg"
+    );
+
+    if (fs.existsSync(audioPath)) {
+      await socket.sendMessage(remoteJid, {
+        audio: fs.readFileSync(audioPath),
+        mimetype: "audio/ogg; codecs=opus",
+        ptt: true,
+      });
+    }
+
+    await sendSuccessReact();
   },
 };

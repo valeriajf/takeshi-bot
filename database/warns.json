@@ -1,1 +1,31 @@
-{}
+{
+  "120363426929015404@g.us": {
+    "warnLimit": 3,
+    "warns": {
+      "49405679923413@lid": [
+        {
+          "reason": "Advertência manual",
+          "timestamp": 1781043519083,
+          "valid": false
+        },
+        {
+          "reason": "Advertência manual",
+          "timestamp": 1781043551753,
+          "valid": false
+        },
+        {
+          "reason": "Advertência por figurinha",
+          "timestamp": 1781044348380,
+          "valid": false
+        }
+      ],
+      "13035925738@lid": [
+        {
+          "reason": "Advertência genérica",
+          "timestamp": 1781480739109,
+          "valid": true
+        }
+      ]
+    }
+  }
+}

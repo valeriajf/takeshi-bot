@@ -31,7 +31,8 @@ export default {
 
     await sendReply(`${response}
 
-📶 Velocidade de resposta: ${ping}ms
+🤖 DeadBoT Online
+📶 Velocidade: ${ping}ms
 ⏱️ Uptime: ${h}h ${m}m ${s}s`);
   },
 };

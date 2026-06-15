@@ -8,20 +8,20 @@ const __dirname = path.dirname(__filename);
 export const PREFIX = "/";
 
 // Emoji do bot (mude se preferir).
-export const BOT_EMOJI = "🤖";
+export const BOT_EMOJI = "";
 
 // Nome do bot (mude se preferir).
-export const BOT_NAME = "Takeshi Bot";
+export const BOT_NAME = "DeadBoT";
 
 // LID do bot.
 // Para obter o LID do bot, use o comando <prefixo>lid respondendo em cima de uma mensagem do número do bot
 // Troque o <prefixo> pelo prefixo do bot (ex: /lid).
-export const BOT_LID = "12345678901234567890@lid";
+export const BOT_LID = "125542581964922@lid";
 
 // LID do dono do bot.
 // Para obter o LID do dono do bot, use o comando <prefixo>meu-lid
 // Troque o <prefixo> pelo prefixo do bot (ex: /meu-lid).
-export const OWNER_LID = "12345678901234567890@lid";
+export const OWNER_LID = "163351011319890@lid";
 
 // Diretório dos comandos
 export const COMMANDS_DIR = path.join(__dirname, "commands");
@@ -36,13 +36,13 @@ export const ASSETS_DIR = path.resolve(__dirname, "..", "assets");
 export const TEMP_DIR = path.resolve(__dirname, "..", "assets", "temp");
 
 // Timeout em milissegundos por evento (evita banimento).
-export const TIMEOUT_IN_MILLISECONDS_BY_EVENT = 500;
+export const TIMEOUT_IN_MILLISECONDS_BY_EVENT = 2000;
 
 // Plataforma de API's
 export const SPIDER_API_BASE_URL = "https://api.spiderx.com.br/api";
 
 // Obtenha seu token, criando uma conta em: https://api.spiderx.com.br.
-export const SPIDER_API_TOKEN = "seu_token_aqui";
+export const SPIDER_API_TOKEN = "8zKdw7bhOu2a2uEnWCSh";
 
 // Plataforma de geração de links a partir de imagens
 export const LINKER_BASE_URL = "https://linker.devgui.dev/api";
@@ -69,4 +69,4 @@ export const PROXY_USERNAME = "";
 export const PROXY_PASSWORD = "";
 
 // Chave da OpenAI para o comando de suporte
-export const OPENAI_API_KEY = "";
+export const OPENAI_API_KEY = "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";
