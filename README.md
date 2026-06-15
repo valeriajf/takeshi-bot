@@ -2,7 +2,7 @@
 
 ![Takeshi Bot](./assets/images/takeshi-bot.png)
 
-[![Version](https://img.shields.io/badge/Vers%C3%A3o-8.4.0-blue)](https://github.com/guiireal/takeshi-bot)
+[![Version](https://img.shields.io/badge/Vers%C3%A3o-8.5.1-blue)](https://github.com/guiireal/takeshi-bot)
 [![Tests](https://github.com/guiireal/takeshi-bot-private/actions/workflows/test.yml/badge.svg)](https://github.com/guiireal/takeshi-bot-private/actions/workflows/test.yml)
 
 > Base para bots de WhatsApp multifuncional com diversos comandos prontos.
@@ -164,15 +164,15 @@ As principais hosts já oferecem o Takeshi como **bot padrão**, não sendo nece
 | [Grupo oficial](https://chat.whatsapp.com/HWeFfnUNR2mBGEw3F9GF5G) | [Grupo oficial](https://chat.whatsapp.com/Fl5FzZQC00J5CZp07AZVwQ?mode=r_c) | [Grupo oficial](https://chat.whatsapp.com/HsZDn6DJrx34z5lbNbNB2M) |
 | [![Bronxys](./assets/images/bronxys.png)](https://bronxyshost.com/) | [![NexFuture](./assets/images/nexfuture.png)](https://nexfuture.com.br/) | [![Speed Cloud](./assets/images/speed-cloud.png)](https://speedhosting.cloud/) |
 
-| TED Host | Cebolinha Host |
-|----------|----------------|
-| [Grupo oficial](https://chat.whatsapp.com/I4EpMkbeaxCI4z4gQ3Pdif) | [Grupo oficial](https://chat.whatsapp.com/CCf2Pw9guan12orwGg0TqC?mode=gi_t) |
-| [![TED Host](./assets/images/ted-host.png)](https://loja.tedhost.com.br/) | [![Cebolinha Host](./assets/images/cebolinha-host.jpeg)]( https://dash.cebolinhahost.com) |
+| TED Host | Cebolinha Host | Vex Host |
+|----------|----------------|----------|
+| [Grupo oficial](https://chat.whatsapp.com/I4EpMkbeaxCI4z4gQ3Pdif) | [Grupo oficial](https://chat.whatsapp.com/CCf2Pw9guan12orwGg0TqC?mode=gi_t) | [Grupo oficial](https://whatsapp.com/channel/0029Vb7bjAK7j6gEdyp6g13D) |
+| [![TED Host](./assets/images/ted-host.png)](https://loja.tedhost.com.br/) | [![Cebolinha Host](./assets/images/cebolinha-host.jpeg)]( https://dash.cebolinhahost.com) | [![Vex Host](./assets/images/vexhost.jpg)](https://vexhost.com.br/) |
 
-| Raikken Host | Axion Hosting |
-|---------|-----------|
-| [Grupo oficial](https://chat.whatsapp.com/BzSDYUHbjHGF6gQmJfh2C7?mode=gi_t) | [Grupo oficial](https://chat.whatsapp.com/CvnUoAmoI5H8H5RLItIDRZ) |
-| [![Raikken](./assets/images/raikken-host.png)](https://painel.raikken.com.br) | [![Axion Hosting](./assets/images/axion-host.jpg)](https://axionhostinger.com.br/home) |
+| Raikken Host |
+|--------------|
+| [Grupo oficial](https://chat.whatsapp.com/BzSDYUHbjHGF6gQmJfh2C7?mode=gi_t) |
+| [![Raikken](./assets/images/raikken-host.png)](https://painel.raikken.com.br) |
 
 ## Instalação em VPS (Debian/Ubuntu)
 

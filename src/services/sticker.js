@@ -329,7 +329,10 @@ export async function processAutoSticker(paramsHandler) {
     fullMessage,
   } = paramsHandler;
 
-  if (!isImage && !isVideo) {
+  const isDirectImage = !!webMessage?.message?.imageMessage;
+  const isDirectVideo = !!webMessage?.message?.videoMessage;
+
+  if (!isDirectImage && !isDirectVideo) {
     return false;
   }
 

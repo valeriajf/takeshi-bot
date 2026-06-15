@@ -18,9 +18,10 @@ import {
 } from "../utils/index.js";
 import { loadCommonFunctions } from "../utils/loadCommonFunctions.js";
 import { errorLog, infoLog } from "../utils/logger.js";
-import { handleStealthPaymentDetection } from "../utils/stealthPayment.js";
 import { customMiddleware } from "./customMiddleware.js";
 import { messageHandler } from "./messageHandler.js";
+import { recordMessageEnvelope } from "../utils/messageEnvelopeRegistry.js";
+import { hasPaymentMessage } from "../utils/paymentMessage.js";
 import { onGroupParticipantsUpdate } from "./onGroupParticipantsUpdate.js";
 import { stickerHandler } from "./stickerHandler.js";
 import activityTracker from "../utils/activityTracker.js";
